@@ -8,28 +8,28 @@ https://github.com/SeldomQA/poium
 """
 import seldom
 from seldom import Seldom
-from poium import Page, PageElement
 
-
-class BaiduPage(Page):
-    """baidu page"""
-    search_input = PageElement(id_="kw")
-    search_button = PageElement(id_="su")
-
+from pageobject.baidu_page import BaiduPage
+from seldom import testdata
 
 class BaiduTest(seldom.TestCase):
     """Baidu serach test case"""
+    def setUp(self):
+        self.word = testdata.get_word()
+        self.page = BaiduPage(Seldom.driver)
+        self.page.get("https://www.baidu.com")
 
     def test_case(self):
         """
         A simple test
         """
-        page = BaiduPage(Seldom.driver)
-        page.get("https://www.baidu.com")
-        page.search_input = "seldom"
-        page.search_button.click()
-        self.assertTitle("seldom_百度搜索")
+
+        self.page.search_input = self.word
+        self.page.search_button.click()
+        self.assertTitle("%s_百度搜索"%self.word)
+
+
 
 
 if __name__ == '__main__':
-    seldom.main(debug=True)
+    seldom.main(debug=True, driver_path="../lib/chromedriver.exe")
