@@ -2,9 +2,10 @@ import seldom
 
 if __name__ == '__main__':
     seldom.main(path="./test_dir",
-                browser="firefox",
+                browser="chrome",
                 title="百度测试用例",
                 description="测试环境：Firefox",
+                driver_path="./lib/chromedriver.exe",
                 rerun=0)
 
 '''
