@@ -17,11 +17,9 @@ class BaiduTest(seldom.TestCase):
     """Baidu test case"""
 
     def setUp(self):
-
         self.page = BaiduPage(Seldom.driver)
         self.page.get("https://www.baidu.com")
-        self.page.window_scroll(width=600, height=400)
-
+        self.max_window()
 
     @seldom.skip()
     def test_demo(self):
@@ -33,11 +31,6 @@ class BaiduTest(seldom.TestCase):
         self.page.search_button.click()
         self.assertTitle("%s_百度搜索" % self.word)
 
-    # @data([
-    #     (1, 'seldom'),
-    #     (2, 'selenium'),
-    #     (3, 'unittest'),
-    # ])
     @data(json_to_list(file='../../data/baidu.json', key="searchkey"))
     def test_baidu(self, search_key):
         """
@@ -52,8 +45,7 @@ class BaiduTest(seldom.TestCase):
 
     @data(json_to_list(file='../../data/baidu.json', key="login"))
     @seldom.skip()
-    def test_baidulogin(self, username, password, exp):
-
+    def test_login(self, username, password, exp):
         self.page.login_in.click()
         self.page.input_username = username
         self.page.input_password = password

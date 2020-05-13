@@ -14,7 +14,7 @@ if __name__ == '__main__':
                 rerun=0)
 
     smtp = SMTP(user=conf.get("mail", "user"), password=conf.get("mail", "password"), host=conf.get("mail", "host"))
-    smtp.sender(to=conf.get("mail", "t0"))
+    smtp.sender(to=conf.get("mail", "to"))
 
 ''' 
 说明：
