@@ -1,5 +1,8 @@
 import seldom
 from seldom.mail import SMTP
+
+from commom.handle_config import conf
+
 if __name__ == '__main__':
     seldom.main(path="./test_dir",
                 browser="chrome",
@@ -9,11 +12,11 @@ if __name__ == '__main__':
                 debug=False,
                 save_last_run=False,
                 rerun=0)
-    smtp = SMTP(user="2284401112@qq.com",password="80801256xyz",host="smtp.qq.com")
-    smtp.sender(to="2284401112@qq.com")
 
+    smtp = SMTP(user=conf.get("mail", "user"), password=conf.get("mail", "password"), host=conf.get("mail", "host"))
+    smtp.sender(to=conf.get("mail", "t0"))
 
-'''
+''' 
 说明：
 path ： 指定测试目录或文件。
 browser : 指定测试浏览器，默认Chrome。
