@@ -1,6 +1,5 @@
 import seldom
 from seldom import data_class
-
 from commom.handle_path import chromedriver
 
 """

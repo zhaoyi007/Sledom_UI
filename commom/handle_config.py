@@ -1,6 +1,5 @@
 import os
 from configparser import ConfigParser
-
 from commom.handle_path import CONF_DIR
 
 

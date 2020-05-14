@@ -1,7 +1,6 @@
 import seldom
 from seldom import data, Seldom
 from seldom import excel_to_list, json_to_list
-from commom.handle_config import URL
 from commom.handle_path import chromedriver
 from pageobject.home_page import login
 

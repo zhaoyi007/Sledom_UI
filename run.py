@@ -1,6 +1,5 @@
 import seldom
 from seldom.mail import SMTP
-
 from commom.handle_config import conf
 
 if __name__ == '__main__':

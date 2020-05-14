@@ -8,7 +8,6 @@ https://github.com/SeldomQA/poium
 """
 import seldom
 from seldom import Seldom, data, json_to_list
-
 from commom.hadle_seldom import json_to_lsit
 from commom.handle_config import URL
 from commom.handle_path import chromedriver

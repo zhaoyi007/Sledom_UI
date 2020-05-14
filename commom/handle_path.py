@@ -21,7 +21,6 @@ REPORT_DIR = os.path.join(BASE_DIR, "reports")
 # drive path
 DIRVE_DIR = os.path.join(BASE_DIR, "lib")
 
-
 # chromedriver.exe path
 chromedriver = DIRVE_DIR + "//" + "chromedriver.exe"
 

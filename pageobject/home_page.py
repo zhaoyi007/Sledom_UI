@@ -1,6 +1,7 @@
 from poium import Page, PageElement
 
 
+
 class login(Page):
     # login_door = PageElement(xpath="//*[@id='main-page']/div[1]/nav/div/ul[1]/li[2]/a", describe="进入登录页面")
     login_door = PageElement(link_text="登录", describe="进入登录页面")
