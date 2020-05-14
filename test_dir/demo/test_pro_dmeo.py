@@ -9,6 +9,9 @@ https://github.com/SeldomQA/poium
 import seldom
 from seldom import Seldom, data, json_to_list
 
+from commom.hadle_seldom import json_to_lsit
+from commom.handle_config import URL
+from commom.handle_path import chromedriver
 from pageobject.baidu_page import BaiduPage
 from seldom import testdata
 
@@ -18,7 +21,7 @@ class BaiduTest(seldom.TestCase):
 
     def setUp(self):
         self.page = BaiduPage(Seldom.driver)
-        self.page.get("https://www.baidu.com")
+        self.open(URL)
         self.max_window()
 
     @seldom.skip()
@@ -31,7 +34,7 @@ class BaiduTest(seldom.TestCase):
         self.page.search_button.click()
         self.assertTitle("%s_百度搜索" % self.word)
 
-    @data(json_to_list(file='../../data/baidu.json', key="searchkey"))
+    @data(json_to_lsit(file='baidu.json', key="searchkey"))
     def test_baidu(self, search_key):
         """
          used parameterized test
@@ -43,7 +46,7 @@ class BaiduTest(seldom.TestCase):
         self.page.search_button.click()
         self.assertInTitle(search_key)
 
-    @data(json_to_list(file='../../data/baidu.json', key="login"))
+    @data(json_to_lsit(file='baidu.json', key="login"))
     @seldom.skip()
     def test_login(self, username, password, exp):
         self.page.login_in.click()
@@ -54,4 +57,4 @@ class BaiduTest(seldom.TestCase):
 
 
 if __name__ == '__main__':
-    seldom.main(debug=True, driver_path="../../lib/chromedriver.exe")
+    seldom.main(debug=True, driver_path=chromedriver)

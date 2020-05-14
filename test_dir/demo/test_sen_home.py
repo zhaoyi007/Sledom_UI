@@ -2,6 +2,7 @@ import seldom
 from seldom import data, Seldom
 from seldom import excel_to_list, json_to_list
 from commom.handle_config import URL
+from commom.handle_path import chromedriver
 from pageobject.home_page import login
 
 
@@ -13,7 +14,7 @@ class home_test(seldom.TestCase):
     def test_login(self, username, password, exp):
 
         self.page = login(Seldom.driver)
-        self.page.get("https://www.baidu.com/")
+        self.page.get("https://www.testerhome.com")
         self.page.login_door.click()
         self.page.username_input = username
         self.page.password_input = password
@@ -28,4 +29,4 @@ class home_test(seldom.TestCase):
 
 
 if __name__ == "__main__":
-    seldom.main(debug=True, driver_path="../../lib/chromedriver.exe")
+    seldom.main(debug=True, driver_path=chromedriver)

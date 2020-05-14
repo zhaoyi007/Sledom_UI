@@ -1,8 +1,12 @@
 import seldom
 from seldom import data_class
+
+from commom.handle_path import chromedriver
+
 """
 data_class传数据方法，参数的映射
 """
+
 
 @data_class(
     ("keyword", "assert_tile"),
@@ -21,6 +25,5 @@ class YouTest(seldom.TestCase):
         self.assertTitle(self.assert_tile)
 
 
-
 if __name__ == '__main__':
-    seldom.main("test_fri_demo.py", driver_path='../lib/chromedriver.exe')
+    seldom.main("test_fri_demo.py", driver_path=chromedriver)
