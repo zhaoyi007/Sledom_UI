@@ -5,8 +5,9 @@ from commom.handle_path import chromedriver
 from pageobject.home_page import login
 
 
-class home_test(seldom.TestCase):
-    def setup(self):
+class HomeTest(seldom.TestCase):
+    def setUp(self) -> None:
+
         pass
 
     @data(json_to_list(file='../../data/home.json', key="login"))
@@ -23,7 +24,8 @@ class home_test(seldom.TestCase):
     def tearDown(self):
         try:
             self.select(self.page.login_select, value="退出")
-        except:
+
+        except SystemExit:
             pass
 
 
