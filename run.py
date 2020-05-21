@@ -11,7 +11,7 @@ if __name__ == '__main__':
                 title="百度测试用例",
                 description="测试环境：Firefox",
                 driver_path="./lib/chromedriver.exe",
-                debug=True,
+                debug=False,
                 save_last_run=False,
                 rerun=0
                 )
