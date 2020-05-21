@@ -10,7 +10,7 @@ data_class传数据方法，参数的映射
 @data_class(
     ("keyword", "assert_tile"),
     [("seldom", "seldom_百度搜索"),
-     ("python", "python_百度搜索")
+     ("python", "测试_百度搜索")
      ])
 class YouTest(seldom.TestCase):
     def setUp(self):

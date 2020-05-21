@@ -1,19 +1,24 @@
 import seldom
 from seldom.mail import SMTP
+
+from commom.hadle_csv_result import Utility
 from commom.handle_config import conf
 
 if __name__ == '__main__':
+    Utility.new_csv()
     seldom.main(path="./test_dir",
                 browser="chrome",
                 title="百度测试用例",
                 description="测试环境：Firefox",
                 driver_path="./lib/chromedriver.exe",
-                debug=False,
+                debug=True,
                 save_last_run=False,
-                rerun=0)
+                rerun=0
+                )
 
-    smtp = SMTP(user=conf.get("mail", "user"), password=conf.get("mail", "password"), host=conf.get("mail", "host"))
-    smtp.sender(to=conf.get("mail", "to"))
+    # smtp = SMTP(user=conf.get("mail", "user"), password=conf.get("mail", "password"), host=conf.get("mail", "host"))
+    #
+    # smtp.sender(to=conf.get("mail", "to"))
 
 ''' 
 说明：
