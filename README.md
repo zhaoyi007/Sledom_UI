@@ -13,7 +13,8 @@ seldom --project mypro
 ##学习日志
 2020.5.19 想单独写入结果进csv文件，self.assertequal(msg=)
 使用msg去调用方法
+2020-5-20 msg不可用，csv.result放弃（增加无用功）
 
 
 ##更新日志
-2020-5-20
+

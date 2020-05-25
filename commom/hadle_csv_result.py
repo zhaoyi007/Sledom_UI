@@ -4,6 +4,9 @@ from commom.handle_path import REPORT_DIR
 
 
 class Utility:
+    """
+    废弃
+    """
     def __init__(self):
         pass
 

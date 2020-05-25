@@ -45,7 +45,6 @@ class BaiduTest(seldom.TestCase):
         self.page.search_input = search_key
         self.page.search_button.click()
         self.assertInTitle(exp)
-        # Utility.write_result("搜素测试", [search_key, exp])
 
     @data(json_to_lsit(file='baidu.json', key="login"))
     @seldom.skip()
