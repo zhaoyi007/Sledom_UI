@@ -1,6 +1,6 @@
 import time
 
-from commom.handle_path import REPORT_DIR
+from lib.handle_path import REPORT_DIR
 
 
 class Utility:

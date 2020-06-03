@@ -1,5 +1,5 @@
 from seldom import json_to_list
-from commom.handle_path import DATA_DIR
+from lib.handle_path import DATA_DIR
 
 
 def json_to_lsit(file, key):
